@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -11,11 +12,11 @@
 
   <!-- css -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <!-- js -->
-  <script src="js/modernizr.js"></script>
+  <script src="{% static 'js/modernizr.js' %}"></script>
 </head>
 
 <body>
@@ -123,10 +124,10 @@
 </div><!-- /#wrapper -->
 
 <!-- js -->
-<script src="js/demo.js"></script>
+<script src="{% static 'js/demo.js' %}"></script>
 
 <!-- ads -->
-<script src="js/fusionad.js"></script>
+<script src="{% static 'js/fusionad.js' %}"></script>
 
 <!-- analytics -->
 <script type="text/javascript">
