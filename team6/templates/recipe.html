@@ -29,7 +29,7 @@
       
       <section class="module parallax" style="background-image: url({% static 'img/recipe_pictures/1_1.png' %});">
         <div class="container">
-          <h1>韓式泡菜豬肉炒雪麵</h1>
+          <h1>{{ recipe.name }}</h1>
         </div>
       </section>
       <section class="module content">
@@ -43,18 +43,12 @@
               </tr>
             </thead>
             <tbody>
+            {% for i in recipe.ingrediant_set.all %}
               <tr class="success">
-                <td>蒟蒻雪麵</td>
-                <td>300克</td>
+                <td>{{ i.food }}</td>
+                <td>{{ i.amount }}</td>
               </tr>
-              <tr class="danger">
-                <td>韓式泡菜</td>
-                <td>200克</td>
-              </tr>
-              <tr class="info">
-                <td>豬肉片</td>
-                <td>100克</td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>
@@ -62,11 +56,9 @@
       <section class="module parallax" style="background-image: url({% static 'img/recipe_pictures/1_1.png' %});">
         <div class="container">
           <h2>步驟</h2>
-          <p>1 準備食材 </p>
-          <p>2 豬肉切小片、秀珍菇撕對半、玉米筍對半切。</p>
-          <p>3 起熱鍋乾煎蒟蒻雪麵至表面乾燥即可起鍋。</p>
-          <p>4 熱鍋後倒入約2湯匙沙拉油，待油微微冒煙後，將豬肉片、玉米筍及秀珍菇下鍋快炒30秒至肉片半熟。將蒟蒻雪麵及泡菜放入炒鍋中，攪拌均勻後，大火快炒至肉絲全熟，加醬油及砂糖拌勻後湯汁收乾即可。</p>
-          <p> 5 簡單完成低熱量蒟蒻炒麵~</p>
+          {% for s in recipe.step_set.all %}
+          <p>{{ s.index }} {{ s.content }}</p>
+          {% endfor %}
         </div>
       </section>
       <section class="module content">

@@ -6,6 +6,3 @@ def here(request):
 
 def index(reuqest):
 	return render_to_response('index.html', locals())
-
-def recipe(request):
-	return render_to_response('recipe.html', locals())	
