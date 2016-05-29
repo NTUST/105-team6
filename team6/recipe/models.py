@@ -5,14 +5,20 @@ class Menu(models.Model):
 	name = models.CharField(max_length=20)
 
 	def __unicode__(self):
-		return self.name 
+		return self.name
+
+	def __str__(self):
+		return self.name
 
 class Recipe(models.Model):
 	menu = models.ForeignKey(Menu)
 	name = models.CharField(max_length=20)
 
 	def __unicode__(self):
-		return self.name 
+		return self.name
+
+	def __str__(self):
+		return self.name
 
 class Ingrediant(models.Model):
 	recipe = models.ForeignKey(Recipe)
