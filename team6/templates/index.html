@@ -23,55 +23,7 @@
     <script src="{% static 'js/bootstrap.js' %}"></script>
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipe <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li class="dropdown dropdown-submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Salad</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Main</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">soup</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
-                </ul>
-              </li>
-              <li class="dropdown dropdown-submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">drink</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
-                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+    {% include 'navbar.html' %}
     <div class="wrapper">
       <main>
       
@@ -82,50 +34,26 @@
       </section>
       
       </main><!-- /main -->
-      <footer>
-        <div class="container">
-          <div class="asides clearfix">
-            <h1>Our Info.</h1>
-            <aside>
-              <nav>
-                <ul>
-                  <li>Tell: (02)1234-5678</li>
-                  <li><a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E8%87%BA%E7%81%A3%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8/@25.0130727,121.5394628,17z/data=!3m1!4b1!4m5!3m4!1s0x3442aa2176c4c0ad:0x90db5e44ee29f455!8m2!3d25.0130679!4d121.5416515?hl=zh-TW">Location: 10607台北市大安區基隆路4段43號</a></li>
-                </ul>
-              </nav>
-            </aside>
-            
-            <aside class="logo">
-              <a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E8%87%BA%E7%81%A3%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8/@25.0130727,121.5394628,17z/data=!4m5!3m4!1s0x3442aa2176c4c0ad:0x90db5e44ee29f455!8m2!3d25.0130679!4d121.5416515?hl=zh-TW"><img alt="NTUST logo" onerror="this.src=logo-alt.png" src="{% static 'img\icon\ntust.png' %}"></a>
-            </aside>
-          </div>
-          <div class="copyright">
-            <small>
-            &copy; Taiwan Tech. Web Development Team 6
-            </small>
-          </div>
-        </div>
-        </footer><!-- /footer -->
-        
-        </div><!-- /#wrapper -->
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <!-- js -->
-        <script src="{% static 'js/demo.js' %}"></script>
-        <!-- analytics -->
-        <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-34160351-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-        </script>
-      </body>
-    </html>
+      {% include 'footer.html' %}
+      </div><!-- /#wrapper -->
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <!-- js -->
+      <script src="{% static 'js/demo.js' %}"></script>
+      <!-- analytics -->
+      <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34160351-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+      </script>
+    </body>
+  </html>
