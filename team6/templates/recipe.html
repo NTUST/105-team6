@@ -1,160 +1,159 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-
 <html class="no-js" lang="en">
-<head>
-  <!-- title and meta -->
-  <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1.0" name="viewport">
-  <meta content="description" name="In this tutorial, we take a look at a more advanced parallax scrolling effect with a background image moving at a different speed to the content above it.">
-
-  <title>Advanced Parallax Scrolling Effect</title>
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-  <!-- css -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-  <!-- js -->
-  <script src="{% static 'js/modernizr.js' %}"></script>
-
-</head>
-
-<body>
-
+  <head>
+    <!-- title and meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <meta content="description" name="In this tutorial, we take a look at a more advanced parallax scrolling effect with a background image moving at a different speed to the content above it.">
+    <title>Advanced Parallax Scrolling Effect</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- js -->
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- js -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+  </head>
+  <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-          </ul>
-        </div><!--/.nav-collapse -->
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipe <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown dropdown-submenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Salad</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+                </ul>
+              </li>
+              <li class="dropdown dropdown-submenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Main</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+                </ul>
+              </li>
+              <li class="dropdown dropdown-submenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">soup</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+                </ul>
+              </li>
+              <li class="dropdown dropdown-submenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">drink</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Dropdown Submenu Link 4.1</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.2</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.3</a></li>
+                  <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
     </nav>
-
-<div class="wrapper">
-
-  <main>
+    <div class="wrapper">
+      <main>
       
       <section class="module parallax" style="background-image: url({% static 'img/recipe_pictures/1_1.png' %});">
         <div class="container">
           <h1>韓式泡菜豬肉炒雪麵</h1>
         </div>
       </section>
-
       <section class="module content">
         <div class="container">
           <h2>食材</h2>
           <p>蒟蒻雪麵300克
-             韓式泡菜200克
-             豬肉片100克
-             蔥2隻
-             蒜片適量
-             秀珍菇適量
-             玉米筍適量</p>
+            韓式泡菜200克
+            豬肉片100克
+            蔥2隻
+            蒜片適量
+            秀珍菇適量
+          玉米筍適量</p>
         </div>
       </section>
-
       <section class="module parallax" style="background-image: url({% static 'img/recipe_pictures/1_1.png' %});">
         <div class="container">
           <h2>步驟</h2>
           <p>1 準備食材 </p>
-             <p>2 豬肉切小片、秀珍菇撕對半、玉米筍對半切。</p>
-             <p>3 起熱鍋乾煎蒟蒻雪麵至表面乾燥即可起鍋。</p>
-             <p>4 熱鍋後倒入約2湯匙沙拉油，待油微微冒煙後，將豬肉片、玉米筍及秀珍菇下鍋快炒30秒至肉片半熟。將蒟蒻雪麵及泡菜放入炒鍋中，攪拌均勻後，大火快炒至肉絲全熟，加醬油及砂糖拌勻後湯汁收乾即可。</p>
-             <p> 5 簡單完成低熱量蒟蒻炒麵~</p>
+          <p>2 豬肉切小片、秀珍菇撕對半、玉米筍對半切。</p>
+          <p>3 起熱鍋乾煎蒟蒻雪麵至表面乾燥即可起鍋。</p>
+          <p>4 熱鍋後倒入約2湯匙沙拉油，待油微微冒煙後，將豬肉片、玉米筍及秀珍菇下鍋快炒30秒至肉片半熟。將蒟蒻雪麵及泡菜放入炒鍋中，攪拌均勻後，大火快炒至肉絲全熟，加醬油及砂糖拌勻後湯汁收乾即可。</p>
+          <p> 5 簡單完成低熱量蒟蒻炒麵~</p>
         </div>
       </section>
-
       <section class="module content">
         <div class="container">
           <h2>I got QUESTIONS</h2>
-
           <p>Name:</p>
           <p>content:</p>
         </div>
       </section>
-
-  </main><!-- /main -->
-
-  <footer>     
-    <div class="container">
-      <div class="asides clearfix">
-      <h1>Our Info.</h1>
-        <aside>        
-          <nav>
-            <ul>
-              <li>Tell: (02)1234-5678</li>
-              <li><a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E8%87%BA%E7%81%A3%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8/@25.0130727,121.5394628,17z/data=!3m1!4b1!4m5!3m4!1s0x3442aa2176c4c0ad:0x90db5e44ee29f455!8m2!3d25.0130679!4d121.5416515?hl=zh-TW">Location: 10607台北市大安區基隆路4段43號</a></li>
-
-            </ul>
-          </nav>
-        </aside>
+      </main><!-- /main -->
+      <footer>
+        <div class="container">
+          <div class="asides clearfix">
+            <h1>Our Info.</h1>
+            <aside>
+              <nav>
+                <ul>
+                  <li>Tell: (02)1234-5678</li>
+                  <li><a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E8%87%BA%E7%81%A3%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8/@25.0130727,121.5394628,17z/data=!3m1!4b1!4m5!3m4!1s0x3442aa2176c4c0ad:0x90db5e44ee29f455!8m2!3d25.0130679!4d121.5416515?hl=zh-TW">Location: 10607台北市大安區基隆路4段43號</a></li>
+                </ul>
+              </nav>
+            </aside>
+            
+            <aside class="logo">
+              <a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E8%87%BA%E7%81%A3%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8/@25.0130727,121.5394628,17z/data=!4m5!3m4!1s0x3442aa2176c4c0ad:0x90db5e44ee29f455!8m2!3d25.0130679!4d121.5416515?hl=zh-TW"><img alt="NTUST logo" onerror="this.src=logo-alt.png" src="{% static 'img\icon\ntust.png' %}"></a>
+            </aside>
+          </div>
+          <div class="copyright">
+            <small>
+            &copy; Taiwan Tech. Web Development Team 6
+            </small>
+          </div>
+        </div>
+        </footer><!-- /footer -->
         
-        <aside class="logo">
-          <a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E8%87%BA%E7%81%A3%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8/@25.0130727,121.5394628,17z/data=!4m5!3m4!1s0x3442aa2176c4c0ad:0x90db5e44ee29f455!8m2!3d25.0130679!4d121.5416515?hl=zh-TW"><img alt="NTUST logo" onerror="this.src=logo-alt.png" src="{% static 'img\icon\ntust.png' %}"></a>
-        </aside>
-      </div>
-      <div class="copyright">
-        <small>
-          &copy; Taiwan Tech. Web Development Team 6
-        </small>
-      </div>
-    </div>
-  </footer><!-- /footer -->
-  
-</div><!-- /#wrapper -->
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<!-- js -->
-<script src="{% static 'js/demo.js' %}"></script>
-
-<!-- analytics -->
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-34160351-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
-
-</body>
-</html>
+        </div><!-- /#wrapper -->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!-- js -->
+        <script src="{% static 'js/demo.js' %}"></script>
+        <!-- analytics -->
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34160351-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+      </body>
+    </html>
