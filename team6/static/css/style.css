@@ -33,15 +33,6 @@ section.module.parallax h1 {
   text-transform: uppercase;
   text-shadow: 0 0 10px white;
 }
-section.module.parallax-1 {
-  background-image: url("../img/demo/pattern1.png");
-}
-section.module.parallax-2 {
-  background-image: url("../img/demo/pattern2.png");
-}
-section.module.parallax-3 {
-  background-image: url("../img/demo/pattern3.png");
-}
 
 @media all and (min-width: 600px) {
   section.module h2 {
@@ -52,6 +43,7 @@ section.module.parallax-3 {
   }
   section.module.parallax {
     padding: 300px 0;
+    background-size: 100%;
   }
   section.module.parallax h1 {
     font-size: 96px;
