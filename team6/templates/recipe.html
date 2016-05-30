@@ -44,7 +44,7 @@
             </thead>
             <tbody>
             {% for i in recipe.ingrediant_set.all %}
-              <tr class="success">
+              <tr class="{% cycle 'success' 'danger' 'info' %}" >
                 <td>{{ i.food }}</td>
                 <td>{{ i.amount }}</td>
               </tr>
