@@ -31,3 +31,8 @@ class Step(models.Model):
 	index = models.DecimalField(max_digits=2,decimal_places=0)
 	content = models.CharField(max_length=200)
 
+class Image(models.Model):
+	recipe = models.ForeignKey(Recipe)
+	index = models.DecimalField(max_digits=2,decimal_places=0)
+	image = models.FileField(upload_to='static/images')
+
