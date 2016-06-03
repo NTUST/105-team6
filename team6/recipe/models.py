@@ -36,3 +36,7 @@ class Image(models.Model):
 	index = models.DecimalField(max_digits=2,decimal_places=0)
 	image = models.FileField(upload_to='static/images')
 
+	def admin_image(self):
+		return '<img src="/%s" height="50" width="50"/>' % self.image
+	admin_image.allow_tags = True
+	

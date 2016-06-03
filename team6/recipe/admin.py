@@ -18,7 +18,7 @@ class StepAdmin(admin.ModelAdmin):
 	list_filter = ('recipe',)
 
 class ImageAdmin(admin.ModelAdmin):
-	list_display = ('recipe', 'index', 'image')
+	list_display = ('recipe', 'index', 'admin_image')
 	list_filter = ('recipe',)
 
 admin.site.register(Menu, MenuAdmin)
