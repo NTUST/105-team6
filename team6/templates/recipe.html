@@ -27,7 +27,7 @@
     <div class="wrapper">
       <main>
       
-      <section class="module parallax" style="background-image: url({% static 'img/recipe_pictures/1_1.png' %});">
+      <section class="module parallax" style="background-image: url(/{{ recipe.image_set.all.0.image }});">
         <div class="container">
           <h1>{{ recipe.name }}</h1>
         </div>
@@ -53,7 +53,7 @@
           </table>
         </div>
       </section>
-      <section class="module parallax" style="background-image: url({% static 'img/recipe_pictures/1_1.png' %});">
+      <section class="module parallax" style="background-image: url(/{{ recipe.image_set.all.1.image }});">
         <div class="container">
           <h2>步驟</h2>
           {% for s in recipe.step_set.all %}
