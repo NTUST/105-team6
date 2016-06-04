@@ -13,7 +13,7 @@ class Menu(models.Model):
 class Recipe(models.Model):
 	menu = models.ForeignKey(Menu)
 	name = models.CharField(max_length=20)
-	introduction = models.CharField(max_length=250)
+	introduction = models.CharField(max_length=250, blank=True)
 
 	def __unicode__(self):
 		return self.name
