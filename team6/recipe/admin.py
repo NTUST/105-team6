@@ -6,7 +6,7 @@ class MenuAdmin(admin.ModelAdmin):
 	list_display = ('name',)
 
 class RecipeAdmin(admin.ModelAdmin):
-	list_display = ('menu','name', 'admin_ingrediants', 'admin_steps', 'admin_images')
+	list_display = ('menu','name', 'introduction', 'admin_ingrediants', 'admin_steps', 'admin_images')
 	list_filter = ('menu',)
 
 class IngrediantAdmin(admin.ModelAdmin):
