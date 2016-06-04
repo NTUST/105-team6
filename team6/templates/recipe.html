@@ -63,9 +63,47 @@
       </section>
       <section class="module content">
         <div class="container">
-          <h2>I got QUESTIONS</h2>
-          <p>Name:</p>
-          <p>content:</p>
+          <h2>Comments</h2>
+          {% if r.comment_set.all %}
+            <p> 目前共有 {{ r.comment_set.all|length }} 條評價</p>
+            <table>
+              <tr>
+                <th>留言者</th>
+                <th>時間</th>
+                <th>評價</th>
+              </tr>
+            {% for c in r.comment_set.all %}
+              <tr>
+                <td> {{ c.visitor }} </td>
+                <td> {{ c.date_time | date:"F j, Y" }} </td>
+                <td> {{ c.content }} </td>
+              </tr>
+            {% endfor %}
+            </table>
+          {% else %}
+            <p>無評價</p>
+          {% endif %}
+
+          <br /><br />
+
+          <form action="" method="post"> {% csrf_token %}
+            <h2>I got QUESTIONS</h2>
+            <table>
+              <tr>
+                <td> <label for="visitor">留言者：</label> </td>
+                <td> <input id="visitor" type="text" name="visitor"> </td>
+              </tr>
+              <tr>
+                <td> <label for="content">評價：</label> </td>
+                <td>
+                  <textarea id="content" rows="10" cols="48"
+                  name="content"></textarea>
+                </td>
+              </tr>
+            </table>
+            <input type="submit" value="留言">
+          </form>
+
         </div>
       </section>
       </main><!-- /main -->

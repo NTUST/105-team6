@@ -53,3 +53,9 @@ class Image(models.Model):
 		return '<img src="/%s" height="50" width="50"/>' % self.image
 	admin_image.allow_tags = True
 
+class Comment(models.Model):
+	recipe = models.ForeignKey(Recipe)
+	visitor = models.CharField(max_length=20)
+	#private = models.BooleanField(default=False)
+	content = models.CharField(max_length=300, blank=True)
+	date_time = models.DateTimeField()
