@@ -64,15 +64,15 @@
       <section class="module content">
         <div class="container">
           <h2>Comments</h2>
-          {% if r.comment_set.all %}
-            <p> 目前共有 {{ r.comment_set.all|length }} 條評價</p>
+          {% if recipe.comment_set.all %}
+            <p> 目前共有 {{ recipe.comment_set.all|length }} 條評價</p>
             <table>
               <tr>
                 <th>留言者</th>
                 <th>時間</th>
                 <th>評價</th>
               </tr>
-            {% for c in r.comment_set.all %}
+            {% for c in recipe.comment_set.all %}
               <tr>
                 <td> {{ c.visitor }} </td>
                 <td> {{ c.date_time | date:"F j, Y" }} </td>

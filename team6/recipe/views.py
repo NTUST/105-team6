@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
@@ -15,13 +14,13 @@ def comment(request, recipe_s):
 	r = Recipe.objects.get(name=recipe_s)
 
 	if request.POST:
-			visitor = request.POST['visitor']
-			content = request.POST['content']
-			date_time = timezone.localtime(timezone.now())
-			Comment.objects.create(
-				visitor=visitor,
-				content=content,
-				date_time=date_time,
-				recipe=r
-			)
+		visitor = request.POST['visitor']
+		content = request.POST['content']
+		date_time = timezone.localtime(timezone.now())
+		Comment.objects.create(
+			visitor=visitor,
+			content=content,
+			date_time=date_time,
+			recipe=r
+		)
 	return render_to_response('recipe.html', RequestContext(request, locals()))

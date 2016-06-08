@@ -59,3 +59,10 @@ class Comment(models.Model):
 	#private = models.BooleanField(default=False)
 	content = models.CharField(max_length=300, blank=True)
 	date_time = models.DateTimeField()
+	reply = models.CharField(max_length=300, blank=True)
+
+	def __unicode__(self):
+		return self.visitor
+
+	def __str__(self):
+		return self.visitor
