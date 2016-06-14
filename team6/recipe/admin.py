@@ -22,7 +22,7 @@ class ImageAdmin(admin.ModelAdmin):
 	list_filter = ('recipe',)
 
 class ReplyComment(admin.ModelAdmin):
-	list_display = ('recipe', 'visitor', 'date_time', 'content', 'reply')
+	list_display = ('recipe', 'visitor', 'private', 'date_time', 'content', 'reply')
 	list_filter = ('recipe',)
 
 admin.site.register(Menu, MenuAdmin)

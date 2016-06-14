@@ -56,7 +56,7 @@ class Image(models.Model):
 class Comment(models.Model):
 	recipe = models.ForeignKey(Recipe)
 	visitor = models.CharField(max_length=20)
-	#private = models.BooleanField(default=False)
+	private = models.BooleanField(default=False)
 	content = models.CharField(max_length=300, blank=True)
 	date_time = models.DateTimeField()
 	reply = models.CharField(max_length=300, blank=True)
