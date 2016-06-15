@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from team6.views import index
-from recipe.views import recipe
+from recipe.views import recipe#, comment
 
 urlpatterns = patterns('',
     # Examples:
@@ -12,7 +12,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    #rl(r'^here/$', here),
     url(r'^recipe/(?P<recipe_s>[\w\-]+)/$', recipe),
     url(r'^$', index),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
