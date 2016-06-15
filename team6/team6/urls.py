@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 from team6.views import index
 from recipe.views import recipe
+from recipe.views import contact
 
 urlpatterns = patterns('',
     # Examples:
@@ -15,4 +16,5 @@ urlpatterns = patterns('',
     #rl(r'^here/$', here),
     url(r'^recipe/(?P<recipe_s>[\w\-]+)/$', recipe),
     url(r'^$', index),
+    url(r'^contact/$', contact),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

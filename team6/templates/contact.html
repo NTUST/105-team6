@@ -22,9 +22,12 @@
     <!-- js -->
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <style>
-      table#t01, th#t01, td#t01 {
-        border: 1px solid white;
-        }
+    	table, th, td {
+   		border: 1px solid black;
+   		border-collapse: collapse;
+   		text-align: left;
+   		font-size: 20pt;
+		}
     </style>
   </head>
   <body>
@@ -32,91 +35,39 @@
     <div class="wrapper">
       <main>
       
-      <section class="module parallax" style="background-image: url(/{{ recipe.image_set.all.0.image }});">
+      <section class="module parallax" style="background-image: url({% static 'img/background/contact1.jpg' %});">
         <div class="container">
-          <h1>{{ recipe.name }}</h1>
+          <h1>Contact</h1>
         </div>
       </section>
       <section class="module content">
         <div class="container">
-          <h2>食材</h2>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>食物</th>
-                <th>適量</th>
-              </tr>
-            </thead>
-            <tbody>
-            {% for i in recipe.ingrediant_set.all %}
-              <tr class="{% cycle 'success' 'danger' 'info' %}" >
-                <td>{{ i.food }}</td>
-                <td>{{ i.amount }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section class="module parallax" style="background-image: url(/{{ recipe.image_set.all.1.image }});">
-        <div class="container">
-          <h2>步驟</h2>
-          {% for s in recipe.step_set.all %}
-          <p>{{ s.index }} {{ s.content }}</p>
-          {% endfor %}
-        </div>
-      </section>
-      <section class="module content">
-        <div class="container">
-          <h2>Comments</h2>
-          {% if recipe.comment_set.all %}
-            <p> 目前共有 {{ recipe.comment_set.all|length }} 條評價</p>
-            <table id="t01", style="width:100%">
-              <tr>
-                <th>留言者</th>
-                <th>時間</th>
-                <th>評價</th>
-                <th>版主也來參一腳</th>
-              </tr>
-            {% for c in recipe.comment_set.all %}
-              <tr>
-                <td> {{ c.visitor }} </td>
-                <td> {{ c.date_time | date:"F j, Y" }} </td>
-                <td> {{ c.content }} </td>
-                <td> {% if c.reply %} {{ c.reply }} 
-                     {% else %} 尚未回覆 
-                     {% endif %}</td>
-              </tr>
-            {% endfor %}
-            </table>
-          {% else %}
-            <p>無評價</p>
-          {% endif %}
-          
-            
-
-          <br /><br />
-
-          <form action="" method="post"> {% csrf_token %}
-            <h2>I got QUESTIONS</h2>
-            <table>
-              <tr>
-                <td> <label for="visitor">留言者：</label> </td>
-                <td> <input id="visitor" type="text" name="visitor"> </td>
-              </tr>
-              <tr>
-                <td> <label for="content">評價：</label> </td>
-                <td>
-                  <textarea id="content" rows="10" cols="48"
-                  name="content"></textarea>
-                </td>
-              </tr>
-            </table>
-            <input type="submit" value="留言">
-          </form>
+         <table width="900" height="1200">
+         	{% for co in contact %}
+　			<tr><td align="center" rowspan="4", width="400">{{ co.chinesename }}</td>
+			
+　				<td>中文名字：{{ co.chinesename }}</td>
+　			</tr>
+　			<tr>
+　				<td>英文名字：{{ co.englishname }}</td>
+　			</tr>
+			<tr>
+　				<td>學號：{{ co.schoolid }}</td>
+　			</tr>
+			<tr>
+　				<td>科系：{{ co.department }}</td>
+　			</tr>
+			<tr><td align="center" colspan="4", height="200">我有話想說：{{ co.introduction }}</td>
+			</tr>
+			{% endfor %}
+		 </table>
 
         </div>
       </section>
+      <section class="module parallax" style="background-image: url({% static 'img/background/contact.jpg' %});background-attachment: fixed;">
+      </section>
+
+   
       </main><!-- /main -->
       {% include 'footer.html' %}
       

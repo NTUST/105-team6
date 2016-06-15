@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from recipe.models import Menu, Recipe, Ingrediant, Step, Comment
-
+from recipe.models import Contact
 # Create your views here.
 
 def recipe(request, recipe_s):
@@ -24,3 +24,12 @@ def comment(request, recipe_s):
 			recipe=r
 		)
 	return render_to_response('recipe.html', RequestContext(request, locals()))
+
+def contact(request):
+	contact = Contact.objects.all()
+	#cn = chinesename.objects.all()
+	#en = englishname.objects.all()
+	#si = schoolid.objects.all()
+	#dp = department.objects.all()
+	#it = introduction.objects.all()
+	return render_to_response('contact.html', locals()) 
