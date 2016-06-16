@@ -56,7 +56,6 @@ ROOT_URLCONF = 'team6.urls'
 
 WSGI_APPLICATION = 'team6.wsgi.application'
 
-CSRF_COOKIE_SECURE = False
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

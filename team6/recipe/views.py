@@ -2,9 +2,13 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils import timezone		#for date_time
 
-from recipe.models import Menu, Recipe, Ingrediant, Step, Comment
+from recipe.models import Menu, Recipe, Ingrediant, Step, Comment, Contact
 
 # Create your views here.
+
+def index(reuqest):
+	menu = Menu.objects.all()
+	return render_to_response('index.html', locals())
 
 def recipe(request, recipe_s):
 	menu = Menu.objects.all()
@@ -32,3 +36,13 @@ def recipe(request, recipe_s):
 			visitor, content = ('', '')
 
 	return render_to_response('recipe.html', RequestContext(request, locals()))
+
+def contact(request):
+	menu = Menu.objects.all()
+	contact = Contact.objects.all()
+	#cn = chinesename.objects.all()
+	#en = englishname.objects.all()
+	#si = schoolid.objects.all()
+	#dp = department.objects.all()
+	#it = introduction.objects.all()
+	return render_to_response('contact.html', locals()) 

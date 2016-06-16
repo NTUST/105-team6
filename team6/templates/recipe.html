@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <!-- js -->
     <script src="{% static 'js/bootstrap.js' %}"></script>
+    <style>
+      table#t01, th#t01, td#t01 {
+        border: 1px solid white;
+        }
+    </style>
   </head>
   <body>
     {% include 'navbar.html' %}
@@ -66,22 +71,26 @@
           <h2>Comments</h2>
           {% if recipe.comment_set.all %}
             <p> 目前共有 {{ recipe.comment_set.all|length }} 條評價</p>
-            <table>
+            <table id="t01", style="width:100%">
               <tr>
                 <th>留言者</th>
                 <th>時間</th>
                 <th>評價</th>
+                <th>回覆</th>
               </tr>
             {% for c in recipe.comment_set.all %}
               <tr>
                 <td> {{ c.visitor }} </td>
                 <td> {{ c.date_time | date:"F j, Y" }} </td>
-                <td> 
-                  {% if c.private %}
-                    <p> PRIVATE CONTENTS </p>
-                  {% else %}
-                    {{ c.content }}
-                  {% endif %}
+                <td> {% if c.private %}
+                        <p> PRIVATE CONTENTS </p>
+                     {% else %}
+                        {{ c.content }}
+                     {% endif %}
+                </td>
+                <td> {% if c.reply %} {{ c.reply }} 
+                     {% else %} 尚未回覆 
+                     {% endif %}
                 </td>
               </tr>
             {% endfor %}
