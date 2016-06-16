@@ -99,6 +99,17 @@ main {
   padding: 0 20px;
 }
 
+.SubmitButton {
+    background-color: white;
+    color: black;
+    border: 1px solid #D4AF37;
+    border-radius: 6px;
+}
+
+.SubmitButton:hover {
+    background-color: #D4AF37;
+}
+
 /* ============================================================
   INFO BAR
 ============================================================ */
@@ -229,13 +240,14 @@ header .social a:hover {
 /* site title */
 .site-title {
   padding: 5px 0;
-  background-color: black;
   text-align: center;
 }
 .site-title h1 {
   color: #fff;
 }
-
+.site-title h2 {
+  color: #fff;
+}
 /* ============================================================
   FOOTER
 ============================================================ */

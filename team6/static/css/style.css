@@ -31,9 +31,30 @@ section.module.parallax h1 {
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 0 10px white;
+}
+section.module.content button {
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+    cursor: pointer;
+    background-color: white;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    border-radius: 6px;
+    position: absolute;
+    left:50%;
 }
 
+section.module.content button:hover {
+    background-color: #D4AF37;
+    color: white;
+}
 @media all and (min-width: 600px) {
   section.module h2 {
     font-size: 42px;
