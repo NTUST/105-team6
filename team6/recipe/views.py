@@ -13,18 +13,22 @@ def recipe(request, recipe_s):
 	if request.POST:
 		visitor = request.POST['visitor']
 		content = request.POST['content']
-		private = request.POST['private']
+		getprivate = request.POST['private']
+		if getprivate == "true":
+			private = True
+		else:
+			private = False
 		date_time = timezone.localtime(timezone.now())
 		if any(not request.POST[k] for k in request.POST):
-			errors.append('* 有空白欄位，請不要留空')
+			errors.append("* 尚有表格未完成填寫！")
 		if not errors:
 			Comment.objects.create(
 				visitor=visitor,
 				content=content,
-				date_time=date_time,
 				private=private,
+				date_time=date_time,
 				recipe=recipe
 			)
-			visistor, content = ('', '')
+			visitor, content = ('', '')
 
 	return render_to_response('recipe.html', RequestContext(request, locals()))

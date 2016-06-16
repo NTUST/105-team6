@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from team6.views import index
-from recipe.views import recipe#, comment
+from recipe.views import recipe
 
 urlpatterns = patterns('',
     # Examples:
