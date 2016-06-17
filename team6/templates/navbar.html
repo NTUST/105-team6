@@ -21,7 +21,10 @@
           {% endfor %}
         </ul>
       </li>
-      <li><a href="#contact">Contact</a></li>
+      {% if recipe %}
+        <li><a href="#Comment" class="scrolldown">Comment</a></li>
+      {% endif %}
+      <li><a href="\contact">Contact</a></li>
     </ul>
   </div>
 </nav>
