@@ -99,6 +99,7 @@ main {
   padding: 0 20px;
 }
 
+
 /* ============================================================
   INFO BAR
 ============================================================ */
@@ -229,13 +230,14 @@ header .social a:hover {
 /* site title */
 .site-title {
   padding: 5px 0;
-  background-color: black;
   text-align: center;
 }
 .site-title h1 {
   color: #fff;
 }
-
+.site-title h2 {
+  color: #fff;
+}
 /* ============================================================
   FOOTER
 ============================================================ */

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <meta content="description" name="In this tutorial, we take a look at a more advanced parallax scrolling effect with a background image moving at a different speed to the content above it.">
-    <title>Advanced Parallax Scrolling Effect</title>
+    <title>謦菜莢。</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -26,6 +26,9 @@
         border: 1px solid white;
         }
     </style>
+    <!-- js -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="{% static 'js/scrolling.js' %}"></script>
   </head>
   <body>
     {% include 'navbar.html' %}
@@ -35,6 +38,7 @@
       <section class="module parallax" style="background-image: url(/{{ recipe.image_set.all.0.image }});">
         <div class="container">
           <h1>{{ recipe.name }}</h1>
+          <p>{{ recipe.introduction }}</p>
         </div>
       </section>
       <section class="module content">
@@ -62,13 +66,13 @@
         <div class="container">
           <h2>步驟</h2>
           {% for s in recipe.step_set.all %}
-          <p>{{ s.index }} {{ s.content }}</p>
+          <p>{{ s.index }}.  {{ s.content }}</p>
           {% endfor %}
         </div>
       </section>
       <section class="module content">
         <div class="container">
-          <h2>Comments</h2>
+          <h2 id="History">Comments</h2>
           {% if recipe.comment_set.all %}
             <p> 目前共有 {{ recipe.comment_set.all|length }} 條評價</p>
             <table id="t01", style="width:100%">
@@ -76,47 +80,62 @@
                 <th>留言者</th>
                 <th>時間</th>
                 <th>評價</th>
-                <th>版主也來參一腳</th>
+                <th>回覆</th>
               </tr>
             {% for c in recipe.comment_set.all %}
               <tr>
                 <td> {{ c.visitor }} </td>
                 <td> {{ c.date_time | date:"F j, Y" }} </td>
-                <td> {{ c.content }} </td>
+                <td> {% if c.private %}
+                        <p> PRIVATE CONTENTS </p>
+                     {% else %}
+                        {{ c.content }}
+                     {% endif %}
+                </td>
                 <td> {% if c.reply %} {{ c.reply }} 
                      {% else %} 尚未回覆 
-                     {% endif %}</td>
+                     {% endif %}
+                </td>
               </tr>
             {% endfor %}
             </table>
           {% else %}
             <p>無評價</p>
           {% endif %}
-          
-            
 
           <br /><br />
 
-          <form action="" method="post"> {% csrf_token %}
-            <h2>I got QUESTIONS</h2>
+          <h2 id="Comment">I got QUESTIONS</h2> 
+          {% for e in errors %}
+            <p style="color:red;">{{ e }}</p>
+          {% endfor %}
+
+          <form id="comment_form" action="" method="post">
+          {% csrf_token %}
             <table>
               <tr>
                 <td> <label for="visitor">留言者：</label> </td>
-                <td> <input id="visitor" type="text" name="visitor"> </td>
+                <td> <input id="visitor" type="text" name="visitor" value="{{visitor}}"> </td>
+              </tr>
+              <tr>
+                <td> <label for="private">隱私：</label> </td>
+                <td> <input type="radio" name="private" value="false" checked> 公開</td>
+                <td> <input type="radio" name="private" value="true"> 隱藏</td>
               </tr>
               <tr>
                 <td> <label for="content">評價：</label> </td>
                 <td>
-                  <textarea id="content" rows="10" cols="48"
-                  name="content"></textarea>
+                  <textarea id="content" rows="10" cols="48" name="content">{{content}}</textarea>
                 </td>
               </tr>
             </table>
-            <input type="submit" value="留言">
+            <br /><br /><br />
+            <a href="#History"><button type="submit" onclick="document.getElementById('comment_form').submit();">Submit!</button></a>
           </form>
-
         </div>
       </section>
+      <br /><br /><br />
+
       </main><!-- /main -->
       {% include 'footer.html' %}
       

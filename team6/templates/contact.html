@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <meta content="description" name="In this tutorial, we take a look at a more advanced parallax scrolling effect with a background image moving at a different speed to the content above it.">
-    <title>Advanced Parallax Scrolling Effect</title>
+    <title>謦菜莢。</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -22,12 +22,9 @@
     <!-- js -->
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <style>
-    	table, th, td {
-   		border: 1px solid black;
-   		border-collapse: collapse;
-   		text-align: left;
-   		font-size: 20pt;
-		}
+    	table {
+   			text-align: left;
+		  }
     </style>
   </head>
   <body>
@@ -36,29 +33,38 @@
       <main>
       
       <section class="module parallax" style="background-image: url({% static 'img/background/contact1.jpg' %});">
-        <div class="container">
+        <div class="site-title">
           <h1>Contact</h1>
+          
         </div>
       </section>
       <section class="module content">
         <div class="container">
-         <table width="900" height="1200">
+          <table class="table table-striped">
          	{% for co in contact %}
-　			<tr><td align="center" rowspan="4", width="400">{{ co.chinesename }}</td>
-			
-　				<td>中文名字：{{ co.chinesename }}</td>
-　			</tr>
-　			<tr>
-　				<td>英文名字：{{ co.englishname }}</td>
-　			</tr>
-			<tr>
-　				<td>學號：{{ co.schoolid }}</td>
-　			</tr>
-			<tr>
-　				<td>科系：{{ co.department }}</td>
-　			</tr>
-			<tr><td align="center" colspan="4", height="200">我有話想說：{{ co.introduction }}</td>
-			</tr>
+            <tr>
+              <th align="center" rowspan="5", width="300">
+                <img class="selfie" src="/{{ co.selfie }}" alt="Smiley face" width="250" height="250">
+              </th>
+              <th>中文名字</th>
+              <td>{{ co.chinesename }}</td>
+　			    </tr>
+　			    <tr>
+　				    <th>英文名字</th>
+              <td>{{ co.englishname }}</td>
+　			    </tr>
+      			<tr>
+      　			<th>學號</th>
+              <td>{{ co.schoolid }}</td>
+      　		</tr>
+      			<tr>
+              <th>科系</th>
+              <td>{{ co.department }}</td>
+　			    </tr>
+            <tr>
+              <th height="100">我有話想說</th>
+              <td height="100">{{ co.introduction }}</td>
+            </tr>
 			{% endfor %}
 		 </table>
 
@@ -77,7 +83,7 @@
       <!-- Placed at the end of the document so the pages load faster -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       <!-- js -->
       <script src="{% static 'js/demo.js' %}"></script>
       <!-- analytics -->

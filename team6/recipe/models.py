@@ -13,6 +13,7 @@ class Menu(models.Model):
 class Recipe(models.Model):
 	menu = models.ForeignKey(Menu)
 	name = models.CharField(max_length=20)
+	introduction = models.CharField(max_length=300)
 
 	def __unicode__(self):
 		return self.name
@@ -56,7 +57,7 @@ class Image(models.Model):
 class Comment(models.Model):
 	recipe = models.ForeignKey(Recipe)
 	visitor = models.CharField(max_length=20)
-	#private = models.BooleanField(default=False)
+	private = models.BooleanField(default=False)
 	content = models.CharField(max_length=300, blank=True)
 	date_time = models.DateTimeField()
 	reply = models.CharField(max_length=300, blank=True)
@@ -66,22 +67,3 @@ class Comment(models.Model):
 
 	def __str__(self):
 		return self.visitor
-
-class Contact(models.Model):
-	chinesename = models.CharField(max_length=20)
-	englishname = models.CharField(max_length=20)
-	schoolid = models.CharField(max_length=20)
-	department = models.CharField(max_length=20)
-	introduction = models.CharField(max_length=200)
-	#selfie = models.FileField(upload_to='static/selfies')
-
-	#def admin_image(self):
-	#	return '<img src="/%s" height="50" width="50"/>' % self.image
-	#admin_image.allow_tags = True
-
-
-
-
-
-
-
